@@ -9,6 +9,7 @@ import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import PaymentModal from './components/PaymentModal';
 import PrivacyModal from './components/PrivacyModal';
+import Chatbot from './components/Chatbot';
 
 interface CartItem {
   id: number;
@@ -33,6 +34,7 @@ function App() {
   const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
   const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
   const [privacyModalType, setPrivacyModalType] = useState<'privacy' | 'terms'>('privacy');
+  const [isChatOpen, setIsChatOpen] = useState(false); // <-- Added for chatbot toggle
 
   const addToCart = (product: Product) => {
     setCartItems(prevItems => {
@@ -81,10 +83,9 @@ function App() {
   };
 
   const totalAmount = cartItems.reduce((sum, item) => {
-    // Handle US format: "12,500.00 DH" → remove "DH" and comma (thousands), keep the number
     const cleanPrice = item.price
-      .replace(/\s*DH\s*/g, '') // Remove DH
-      .replace(/,/g, '');         // Remove commas (thousands separator)
+      .replace(/\s*DH\s*/g, '') 
+      .replace(/,/g, '');         
     const price = parseFloat(cleanPrice);
     return sum + (price * item.quantity);
   }, 0);
@@ -94,7 +95,6 @@ function App() {
     setIsPrivacyModalOpen(true);
   };
 
-  // Add event listeners for footer links
   React.useEffect(() => {
     const handleFooterClick = (e: Event) => {
       const target = e.target as HTMLElement;
@@ -116,7 +116,7 @@ function App() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="min-h-screen bg-luxury-obsidian"
+      className="min-h-screen bg-luxury-obsidian relative"
     >
       <Header 
         cartItems={cartItems}
@@ -145,6 +145,18 @@ function App() {
         onClose={() => setIsPrivacyModalOpen(false)}
         type={privacyModalType}
       />
+
+      {/* ---- Normal Floating Chatbot Button ---- */}
+<button
+  onClick={() => setIsChatOpen(true)}
+  className="fixed bottom-6 right-6 w-16 h-16 rounded-full bg-gradient-to-tr from-primary-500 via-accent-500 to-secondary-500 shadow-lg shadow-primary-500/50 flex items-center justify-center animate-float-glow z-50 hover:scale-110 active:scale-95 transition-transform duration-300"
+>
+  <span className="text-white font-bold text-xl">💬</span>
+</button>
+
+
+      {/* Chatbot Component */}
+      <Chatbot isOpen={isChatOpen} onClose={() => setIsChatOpen(false)} />
     </motion.div>
   );
 }

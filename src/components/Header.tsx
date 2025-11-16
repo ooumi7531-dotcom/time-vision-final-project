@@ -91,7 +91,7 @@ const Header: React.FC<HeaderProps> = ({ cartItems, updateCartItem, removeFromCa
               <img
                 src="/daylogo.png"
                 alt="Time & Vision logo"
-                className="w-40 h-40 object-contain -ml-24"
+                className="w-40 h-40 object-contain ml-2"
               />
               <div className="hidden md:block">
                 <h1 className="text-2xl font-playfair font-bold text-white">

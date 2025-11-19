@@ -10,13 +10,13 @@ const team = [
     image: 'WZPZ4855.JPG',
   },
   {
-    name: 'Douaa',
+    name: 'Douaa Fatahi',
     role: 'Développeur',
     description: 'Experte en développement et optimisation technique',
     image: '/douaa.jpg',
   },
   {
-    name: 'Yasser',
+    name: 'Yasser Ezzerdi',
     role: 'Développeur',
     description: 'Spécialiste en architecture logicielle et performance',
     image: '/yasser.jpg',

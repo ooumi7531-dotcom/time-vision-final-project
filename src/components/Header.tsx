@@ -547,23 +547,23 @@ const Header: React.FC<HeaderProps> = ({ cartItems, updateCartItem, removeFromCa
                           <h3 className="font-semibold text-luxury-obsidian">{item.name}</h3>
                           <p className="text-luxury-gold font-bold">{item.price} DH</p>
                           <div className="flex items-center space-x-2 mt-2">
-                            <motion.button
-                              whileHover={{ scale: 1.1 }}
-                              whileTap={{ scale: 0.9 }}
-                              onClick={() => updateCartItem(item.id, Math.max(0, item.quantity - 1))}
-                              className="p-1 hover:bg-luxury-gold/10 rounded-lg transition-colors"
-                            >
-                              <Minus size={16} />
-                            </motion.button>
-                            <span className="w-8 text-center font-semibold bg-luxury-gold/10 rounded-lg py-1">{item.quantity}</span>
-                            <motion.button
-                              whileHover={{ scale: 1.1 }}
-                              whileTap={{ scale: 0.9 }}
-                              onClick={() => updateCartItem(item.id, item.quantity + 1)}
-                              className="p-1 hover:bg-luxury-gold/10 rounded-lg transition-colors"
-                            >
-                              <Plus size={16} />
-                            </motion.button>
+<motion.button
+  whileHover={{ scale: 1.1 }}
+  whileTap={{ scale: 0.9 }}
+  onClick={() => updateCartItem(item.id, Math.max(0, item.quantity - 1))}
+  className="p-1 hover:bg-luxury-gold/10 rounded-lg transition-colors text-luxury-obsidian"
+>
+  <Minus size={16} />
+</motion.button>
+<span className="w-8 text-center font-semibold text-luxury-obsidian bg-luxury-gold/10 rounded-lg py-1">{item.quantity}</span>
+<motion.button
+  whileHover={{ scale: 1.1 }}
+  whileTap={{ scale: 0.9 }}
+  onClick={() => updateCartItem(item.id, item.quantity + 1)}
+  className="p-1 hover:bg-luxury-gold/10 rounded-lg transition-colors text-luxury-obsidian"
+>
+  <Plus size={16} />
+</motion.button>
                           </div>
                         </div>
                         <motion.button

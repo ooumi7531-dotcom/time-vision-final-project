@@ -172,57 +172,57 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
                           <label className="block text-sm font-medium text-luxury-obsidian mb-2">
                             Nom sur la carte
                           </label>
-                          <input
-                            type="text"
-                            name="cardName"
-                            value={formData.cardName}
-                            onChange={handleInputChange}
-                            required
-                            className="w-full px-4 py-3 border border-neutral-300 rounded-xl focus:ring-2 focus:ring-luxury-gold focus:border-transparent"
-                            placeholder="Nom complet"
-                          />
+<input
+  type="text"
+  name="cardName"
+  value={formData.cardName}
+  onChange={handleInputChange}
+  required
+  className="w-full px-4 py-3 border border-neutral-300 rounded-xl focus:ring-2 focus:ring-luxury-gold focus:border-transparent text-luxury-obsidian"
+  placeholder="Nom complet"
+/>
                         </div>
                         <div className="md:col-span-2">
                           <label className="block text-sm font-medium text-luxury-obsidian mb-2">
                             Numéro de carte
                           </label>
-                          <input
-                            type="text"
-                            name="cardNumber"
-                            value={formData.cardNumber}
-                            onChange={handleInputChange}
-                            required
-                            className="w-full px-4 py-3 border border-neutral-300 rounded-xl focus:ring-2 focus:ring-luxury-gold focus:border-transparent"
-                            placeholder="1234 5678 9012 3456"
-                          />
+<input
+  type="text"
+  name="cardNumber"
+  value={formData.cardNumber}
+  onChange={handleInputChange}
+  required
+  className="w-full px-4 py-3 border border-neutral-300 rounded-xl focus:ring-2 focus:ring-luxury-gold focus:border-transparent text-luxury-obsidian"
+  placeholder="1234 5678 9012 3456"
+/>
                         </div>
                         <div>
                           <label className="block text-sm font-medium text-luxury-obsidian mb-2">
                             Date d'expiration
                           </label>
-                          <input
-                            type="text"
-                            name="expiryDate"
-                            value={formData.expiryDate}
-                            onChange={handleInputChange}
-                            required
-                            className="w-full px-4 py-3 border border-neutral-300 rounded-xl focus:ring-2 focus:ring-luxury-gold focus:border-transparent"
-                            placeholder="MM/AA"
-                          />
+<input
+  type="text"
+  name="expiryDate"
+  value={formData.expiryDate}
+  onChange={handleInputChange}
+  required
+  className="w-full px-4 py-3 border border-neutral-300 rounded-xl focus:ring-2 focus:ring-luxury-gold focus:border-transparent text-luxury-obsidian"
+  placeholder="MM/AA"
+/>
                         </div>
                         <div>
                           <label className="block text-sm font-medium text-luxury-obsidian mb-2">
                             CVV
                           </label>
-                          <input
-                            type="text"
-                            name="cvv"
-                            value={formData.cvv}
-                            onChange={handleInputChange}
-                            required
-                            className="w-full px-4 py-3 border border-neutral-300 rounded-xl focus:ring-2 focus:ring-luxury-gold focus:border-transparent"
-                            placeholder="123"
-                          />
+<input
+  type="text"
+  name="cvv"
+  value={formData.cvv}
+  onChange={handleInputChange}
+  required
+  className="w-full px-4 py-3 border border-neutral-300 rounded-xl focus:ring-2 focus:ring-luxury-gold focus:border-transparent text-luxury-obsidian"
+  placeholder="123"
+/>
                         </div>
                       </div>
                     </div>
@@ -237,15 +237,15 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
                         <label className="block text-sm font-medium text-luxury-obsidian mb-2">
                           Numéro de téléphone
                         </label>
-                        <input
-                          type="tel"
-                          name="phoneNumber"
-                          value={formData.phoneNumber}
-                          onChange={handleInputChange}
-                          required
-                          className="w-full px-4 py-3 border border-neutral-300 rounded-xl focus:ring-2 focus:ring-luxury-gold focus:border-transparent"
-                          placeholder="+212 6XX-XXXXXX"
-                        />
+<input
+  type="tel"
+  name="phoneNumber"
+  value={formData.phoneNumber}
+  onChange={handleInputChange}
+  required
+  className="w-full px-4 py-3 border border-neutral-300 rounded-xl focus:ring-2 focus:ring-luxury-gold focus:border-transparent text-luxury-obsidian"
+  placeholder="+212 6XX-XXXXXX"
+/>
                       </div>
                     </div>
                   )}
@@ -260,26 +260,26 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
                         <label className="block text-sm font-medium text-luxury-obsidian mb-2">
                           Adresse complète
                         </label>
-                        <input
-                          type="text"
-                          name="address"
-                          value={formData.address}
-                          onChange={handleInputChange}
-                          required
-                          className="w-full px-4 py-3 border border-neutral-300 rounded-xl focus:ring-2 focus:ring-luxury-gold focus:border-transparent"
-                          placeholder="Rue, numéro, quartier"
-                        />
+<input
+  type="text"
+  name="address"
+  value={formData.address}
+  onChange={handleInputChange}
+  required
+  className="w-full px-4 py-3 border border-neutral-300 rounded-xl focus:ring-2 focus:ring-luxury-gold focus:border-transparent text-luxury-obsidian"
+  placeholder="Rue, numéro, quartier"
+/>
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-luxury-obsidian mb-2">
                           Ville
                         </label>
-                        <select
-                          name="city"
-                          value={formData.city}
-                          onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-neutral-300 rounded-xl focus:ring-2 focus:ring-luxury-gold focus:border-transparent"
-                        >
+<select
+  name="city"
+  value={formData.city}
+  onChange={handleInputChange}
+  className="w-full px-4 py-3 border border-neutral-300 rounded-xl focus:ring-2 focus:ring-luxury-gold focus:border-transparent text-luxury-obsidian"
+>
                           <option value="Casablanca">Casablanca</option>
                           <option value="Rabat">Rabat</option>
                           <option value="Marrakech">Marrakech</option>
@@ -291,14 +291,14 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
                         <label className="block text-sm font-medium text-luxury-obsidian mb-2">
                           Code postal
                         </label>
-                        <input
-                          type="text"
-                          name="postalCode"
-                          value={formData.postalCode}
-                          onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-neutral-300 rounded-xl focus:ring-2 focus:ring-luxury-gold focus:border-transparent"
-                          placeholder="20000"
-                        />
+<input
+  type="text"
+  name="postalCode"
+  value={formData.postalCode}
+  onChange={handleInputChange}
+  className="w-full px-4 py-3 border border-neutral-300 rounded-xl focus:ring-2 focus:ring-luxury-gold focus:border-transparent text-luxury-obsidian"
+  placeholder="20000"
+/>
                       </div>
                     </div>
                   </div>

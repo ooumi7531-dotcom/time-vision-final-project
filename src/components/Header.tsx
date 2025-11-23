@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ShoppingBag, Search, User, Phone, Minus, Plus, Trash2, LogIn, Sparkles, Eye } from 'lucide-react';
+import { useAuth } from '../contexts/AuthContext';
+
 
 interface CartItem {
   id: number;
@@ -18,6 +20,7 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ cartItems, updateCartItem, removeFromCart, onCheckout }) => {
+  const { signInWithGoogle } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -381,23 +384,23 @@ const Header: React.FC<HeaderProps> = ({ cartItems, updateCartItem, removeFromCa
                 </div>
                 
                 <div className="space-y-4">
-                  <motion.button
-                    whileHover={{ scale: 1.02, y: -2 }}
-                    whileTap={{ scale: 0.98 }}
-                    onClick={() => handleLogin('google')}
-                    className="w-full flex items-center justify-center space-x-3 bg-white border-2 border-neutral-200 hover:border-luxury-gold py-4 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden group"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.1 }}
-                  >
-                    <div className="w-6 h-6 bg-gradient-to-r from-blue-500 to-red-500 rounded-full"></div>
-                    <span className="font-semibold text-luxury-obsidian relative z-10">Continuer avec Google</span>
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-transparent via-luxury-gold/10 to-transparent"
-                      animate={{ x: ['-100%', '100%'] }}
-                      transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                    />
-                  </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.02, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={signInWithGoogle}
+                  className="w-full flex items-center justify-center space-x-3 bg-white border-2 border-neutral-200 hover:border-luxury-gold py-4 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden group"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.1 }}
+                >
+                  <div className="w-6 h-6 bg-gradient-to-r from-blue-500 to-red-500 rounded-full"></div>
+                  <span className="font-semibold text-luxury-obsidian relative z-10">Continuer avec Google</span>
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-luxury-gold/10 to-transparent"
+                    animate={{ x: ['-100%', '100%'] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                  />
+                </motion.button>
                   
                   <motion.button
                     whileHover={{ scale: 1.02, y: -2 }}
